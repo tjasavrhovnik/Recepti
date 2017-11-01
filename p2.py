@@ -46,27 +46,27 @@ href='/uporabniki/seznam/baterija/'>baterija</a>&#160;</span>
 <p class='objava no-mobile-640'>objavljeno: 31.8.2017</p>"""
 
 re_bloka = re.compile(
-    #r"<a href='/recepti/(?P<id>\d+).*?'.*?objavljeno.*?</p>"
     r"<a href='/recepti/(?P<id>\d+).*?objavljeno.*?</p>"
     ,
     flags=re.DOTALL
     )
 
 vzorec = re.compile(
-    r"<a href='/recepti/\d+/mesne-jedi/(?P<ime>.*?)/" #ime
-    #r"<h3 class='single-line'>"
-    #r'.*?'
-    #r'Število fotografij.*?>'
-    #r'(?P<ime>.*?)' #ime
-    #r'</a>'
+    r"single-line.*?Objava recepta.*?'>"
+    r'(?P<jed>.*?)' #jed
+    r'</a>'
     r'.*?'
+    #r"<p class='tezavnost'>"
+    #r'(?P<zahtevnost>.*?)' #zahtevnost
+    #r'</p>'
     r"<span class='cas'>"
     r'(?P<cas>.*?)' #cas
     r'</span>'
-    r'.*?'
-    r"(<p class='kolicina no-mobile-640'>količina: )?"
-    r'(?P<kolicina>.*?)?' #kolicina ne nastopi vedno
-    r'</p>'
+    #r'.*?'
+    #r"(<p class='kolicina no-mobile-640'>količina: (?P<kolicina>.*?)</p>)?"
+    r"(<p class='kolicina no-mobile-640'>količina: )?(?P<kolicina>.*?)?(</p>)?"
+    #r'(?P<kolicina>.*?)?' #kolicina ne nastopi vedno
+    #r'(</p>)?'
     r'.*?'
     r"href='/uporabniki.*?>"
     r'(?P<avtor>.*?)' #avtor
@@ -83,8 +83,14 @@ vzorec = re.compile(
     flags=re.DOTALL
     )
 
-for ujemanje in vzorec.finditer(odlomek):
-    print(ujemanje.groupdict())
+#re_zahtevnosti = re.compile(
+#    r"<p class='tezavnost'>"
+#    r'(?P<zahtevnost>.*?)' #zahtevnost
+#    r'</p>'
+#    )
+
+#for ujemanje in vzorec.finditer(odlomek):
+#    print(ujemanje.groupdict())
 
 def podatki(blok):
     ujemanje = vzorec.search(blok)
