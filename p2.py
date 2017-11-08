@@ -56,17 +56,14 @@ vzorec = re.compile(
     r'(?P<jed>.*?)' #jed
     r'</a>'
     r'.*?'
-    #r"<p class='tezavnost'>"
-    #r'(?P<zahtevnost>.*?)' #zahtevnost
-    #r'</p>'
     r"<span class='cas'>"
     r'(?P<cas>.*?)' #cas
     r'</span>'
-    #r'.*?'
-    #r"(<p class='kolicina no-mobile-640'>količina: (?P<kolicina>.*?)</p>)?"
-    r"(<p class='kolicina no-mobile-640'>količina: )?(?P<kolicina>.*?)?(</p>)?"
-    #r'(?P<kolicina>.*?)?' #kolicina ne nastopi vedno
-    #r'(</p>)?'
+    r'.*?'
+    #razlicni podatki
+    r"(</p>(?P<podatki>.*?)</div>)"
+    #r"(<p class='kolicina no-mobile-640'>(?P<podatki>.*?)</p>)?"
+    #r"(<p class='kolicina no-mobile-640'>količina: (?P<podatki>[0-9a-z ]+)</p>)?"
     r'.*?'
     r"href='/uporabniki.*?>"
     r'(?P<avtor>.*?)' #avtor
@@ -83,11 +80,12 @@ vzorec = re.compile(
     flags=re.DOTALL
     )
 
-#re_zahtevnosti = re.compile(
-#    r"<p class='tezavnost'>"
-#    r'(?P<zahtevnost>.*?)' #zahtevnost
-#    r'</p>'
-#    )
+re_kolicine = re.compile(
+    r"<p class='kolicina no-mobile-640'>količina: (?P<kolicina>.*?)</p>"
+    ,
+    flags=re.DOTALL
+    )
+
 
 #for ujemanje in vzorec.finditer(odlomek):
 #    print(ujemanje.groupdict())
@@ -96,6 +94,9 @@ def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
         jed = ujemanje.groupdict()
+        ujemanje_kolicine = re_kolicine.search(jed['podatki'])
+        jed['kolicina'] = ujemanje_kolicine.group('kolicina') if ujemanje_kolicine else None
+        del jed['podatki']
         return jed
     else:
         print('napaka')
