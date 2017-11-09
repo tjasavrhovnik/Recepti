@@ -60,11 +60,6 @@ vzorec = re.compile(
     r'(?P<cas>.*?)' #cas
     r'</span>'
     r'.*?'
-    #razlicni podatki
-    r"(</p>(?P<podatki>.*?)</div>)"
-    #r"(<p class='kolicina no-mobile-640'>(?P<podatki>.*?)</p>)?"
-    #r"(<p class='kolicina no-mobile-640'>količina: (?P<podatki>[0-9a-z ]+)</p>)?"
-    r'.*?'
     r"href='/uporabniki.*?>"
     r'(?P<avtor>.*?)' #avtor
     r'</a>'
@@ -81,7 +76,7 @@ vzorec = re.compile(
     )
 
 re_kolicine = re.compile(
-    r"<p class='kolicina no-mobile-640'>količina: (?P<kolicina>.*?)</p>"
+    r"<p class='kolicina no-mobile-640'>.*?: (?P<kolicina>.*?)</p>"
     ,
     flags=re.DOTALL
     )
@@ -94,9 +89,11 @@ def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
         jed = ujemanje.groupdict()
-        ujemanje_kolicine = re_kolicine.search(jed['podatki'])
-        jed['kolicina'] = ujemanje_kolicine.group('kolicina') if ujemanje_kolicine else None
-        del jed['podatki']
+        kolicina_match = re_kolicine.search(blok)
+        if kolicina_match is None:
+            jed['kolicina'] = None
+        else:
+            jed['kolicina'] = kolicina_match.groupdict()['kolicina']
         return jed
     else:
         print('napaka')
