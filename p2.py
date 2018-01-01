@@ -2,48 +2,6 @@ import re
 import requests
 import os
 
-odlomek = """<a href='/recepti/21479/mesne-jedi/mehiska-tortilja/'
-title='Objava recepta: 20.10.2017<br>Število fotografij: 1'>
-<img src='/slikerecepti/21479/1-200x150.jpg'>
-</a></div><h3 class='single-line'>
-<a href='/recepti/21479/mesne-jedi/mehiska-tortilja/'
-title='Objava recepta: 20.10.2017<br>Število fotografij: 1'>Mehiška tortilja</a>
-</h3><div class='recept_vsebina1'>
-<p class='tezavnost'>
-<img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-</p><p class='cas'><img class='ura' src='/grafika6/ikona-ura.png'
-title='30 minut' /><span class='cas'>30 minut</span></p>
-<p class='kolicina no-mobile-640'>količina: za 3 porcije</p>
-</div><div class='recept_vsebina2'><span class='avtor'>
-<a class='username' href='/uporabniki/seznam/rbj897zs2mnenu6i/'>Schär</a>
-&#160;</span><p class='kategorija no-mobile-640'>mesne jedi: govedina</p>
-<p class='objava no-mobile-640'>objavljeno: 20.10.2017</p>
-</div></article><article class='en_recept'><div class='image-wrap'>
-<a href='/recepti/21418/mesne-jedi/piscancja-rizota-s-korenjem/'
-title='Objava recepta: 31.8.2017<br>Število mnenj: 5<br>Število fotografij: 1'>
-<img src='/slikerecepti/21418/1-200x150.jpg'></a></div><h3 class='single-line'>
-<a href='/recepti/21418/mesne-jedi/piscancja-rizota-s-korenjem/'
-title='Objava recepta: 31.8.2017<br>Število mnenj: 5<br>
-Število fotografij: 1'>Piščančja rižota s korenjem</a></h3>
-<div class='recept_vsebina1'><p class='tezavnost'>
-<img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-<img src='/grafika6/ikona-utez-prazna.png' alt='Zahtevnost' title='zahtevnost'>
-</p><p class='cas'><img class='ura' src='/grafika6/ikona-ura.png'
-title='45 minut' /><span class='cas'>45 minut</span></p>
-<p class='kolicina no-mobile-640'>količina: za eno osebo</p></div>
-<div class='recept_vsebina2'><span class='avtor'>
-<img class='spol' src='/grafika6/ikona-spol-brez.png'
-title='spol ni določen oz. marsovec'><a class='username'
-href='/uporabniki/seznam/baterija/'>baterija</a>&#160;</span>
-<p class='kategorija no-mobile-640'>mesne jedi: perutnina</p>
-<p class='objava no-mobile-640'>objavljeno: 31.8.2017</p>"""
 
 re_bloka = re.compile(
     r"<a href='/recepti/(?P<id>\d+).*?objavljeno.*?</p>"
@@ -81,9 +39,6 @@ re_kolicine = re.compile(
     flags=re.DOTALL
     )
 
-
-#for ujemanje in vzorec.finditer(odlomek):
-#    print(ujemanje.groupdict())
 
 def podatki(blok):
     ujemanje = vzorec.search(blok)
