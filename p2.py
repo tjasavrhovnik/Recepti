@@ -39,11 +39,26 @@ re_kolicine = re.compile(
     flags=re.DOTALL
     )
 
+re_tezavnosti = re.compile(
+    r"<p class='tezavnost'>(?P<tezavnost>.*?)</p>"
+    ,
+    flags=re.DOTALL
+    )
 
 def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
         jed = ujemanje.groupdict()
+
+        tezavnost_match = re_tezavnosti.search(blok)
+        jed['tezavnost'] = tezavnost_match.groupdict()['tezavnost']
+        zahtevnost = 10
+        for i in jed['tezavnost']:
+            if i == '-':
+                zahtevnost -= 1
+        jed['zahtevnost'] = zahtevnost
+        del jed['tezavnost']
+            
         kolicina_match = re_kolicine.search(blok)
         if kolicina_match is None:
             jed['kolicina'] = None
