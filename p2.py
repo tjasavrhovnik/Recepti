@@ -14,10 +14,6 @@ vzorec = re.compile(
     r'(?P<jed>.*?)' #jed
     r'</a>'
     r'.*?'
-    r"<span class='cas'>"
-    r'(?P<cas>.*?)' #cas
-    r'</span>'
-    r'.*?'
     r"href='/uporabniki.*?>"
     r'(?P<avtor>.*?)' #avtor
     r'</a>'
@@ -45,6 +41,12 @@ re_tezavnosti = re.compile(
     flags=re.DOTALL
     )
 
+re_casa = re.compile(
+    r"<span class='cas'>(?P<cas>.*?)</span>"
+    ,
+    flags=re.DOTALL
+    )
+
 def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
@@ -53,7 +55,7 @@ def podatki(blok):
         tezavnost_match = re_tezavnosti.search(blok)
         jed['tezavnost'] = tezavnost_match.groupdict()['tezavnost']
         zahtevnost = 10
-        for i in jed['tezavnost']:
+        for i in jed['tezavnost'].strip():
             if i == '-':
                 zahtevnost -= 1
         jed['zahtevnost'] = zahtevnost
@@ -64,6 +66,13 @@ def podatki(blok):
             jed['kolicina'] = None
         else:
             jed['kolicina'] = kolicina_match.groupdict()['kolicina']
+
+        cas_match = re_casa.search(blok)
+        if cas_match is None:
+            jed['cas'] = None
+        else:
+            jed['cas'] = cas_match.groupdict()['cas']
+            
         return jed
     else:
         print('napaka')
@@ -109,4 +118,10 @@ def preberi_iz_imenika(imenik):
     return jedi
 
 #shrani_jedi_v_imenik('test', 2, 2)
-preberi_iz_imenika('test')
+#shrani_jedi_v_imenik('test2', 10, 12)
+#shrani_jedi_v_imenik('test3', 50, 12)
+#shrani_jedi_v_imenik('jedi')
+#preberi_iz_imenika('jedi')
+#jedi = preberi_iz_imenika('jedi')
+#print(jedi)
+#preberi_iz_imenika('test')
