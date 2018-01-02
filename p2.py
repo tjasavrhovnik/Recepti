@@ -14,14 +14,6 @@ vzorec = re.compile(
     r'(?P<jed>.*?)' #jed
     r'</a>'
     r'.*?'
-    r"href='/uporabniki.*?>"
-    r'(?P<avtor>.*?)' #avtor
-    r'</a>'
-    r'.*?'
-    r"<p class='kategorija no-mobile-640'>mesne jedi: "
-    r'(?P<vrsta>.*?)' #vrsta
-    r'</p>'
-    r'.*?'
     r"<p class='objava no-mobile-640'>objavljeno: "
     r'(?P<datum>.*?)' #datum
     r'</p>'
@@ -43,6 +35,18 @@ re_tezavnosti = re.compile(
 
 re_casa = re.compile(
     r"<span class='cas'>(?P<cas>.*?)</span>"
+    ,
+    flags=re.DOTALL
+    )
+
+re_vrste = re.compile(
+    r"<p class='kategorija no-mobile-640'>mesne jedi: (?P<vrsta>.*?)</p>"
+    ,
+    flags=re.DOTALL
+    )
+
+re_avtorja = re.compile(
+    r"href='/uporabniki.*?>(?P<avtor>.*?)</a>"
     ,
     flags=re.DOTALL
     )
@@ -72,6 +76,18 @@ def podatki(blok):
             jed['cas'] = None
         else:
             jed['cas'] = cas_match.groupdict()['cas']
+
+        vrsta_match = re_vrste.search(blok)
+        if vrsta_match is None:
+            jed['vrsta'] = None
+        else:
+            jed['vrsta'] = vrsta_match.groupdict()['vrsta']
+
+        avtor_match = re_avtorja.search(blok)
+        if avtor_match is None:
+            jed['avtor'] = None
+        else:
+            jed['avtor'] = avtor_match.groupdict()['avtor']
             
         return jed
     else:
