@@ -1,3 +1,5 @@
+import csv
+import json
 import re
 import requests
 import os
@@ -137,7 +139,18 @@ def preberi_iz_imenika(imenik):
 #shrani_jedi_v_imenik('test2', 10, 12)
 #shrani_jedi_v_imenik('test3', 50, 12)
 #shrani_jedi_v_imenik('jedi')
-#preberi_iz_imenika('jedi')
-#jedi = preberi_iz_imenika('jedi')
-#print(jedi)
 #preberi_iz_imenika('test')
+
+jedi = preberi_iz_imenika('jedi')
+#print(jedi)
+
+def zapisi_json(podatki, ime_datoteke):
+    with open(ime_datoteke, 'w') as datoteka:
+        json.dump(podatki, datoteka, indent=2)
+
+def zapisi_csv(podatki, polja, ime_datoteke):
+    with open(ime_datoteke, 'w') as datoteka:
+        pisalec = csv.DictWriter(datoteka, polja, extrasaction='ignore')
+        pisalec.writeheader()
+        for podatek in podatki:
+            pisalec.writerow(podatek)
