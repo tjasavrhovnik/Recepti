@@ -136,11 +136,7 @@ def preberi_iz_imenika(imenik):
     return jedi
 
 #shrani_jedi_v_imenik('test', 2, 2)
-#shrani_jedi_v_imenik('test2', 10, 12)
-#shrani_jedi_v_imenik('test3', 50, 12)
 #shrani_jedi_v_imenik('jedi')
-#preberi_iz_imenika('test')
-
 jedi = preberi_iz_imenika('jedi')
 #print(jedi)
 
