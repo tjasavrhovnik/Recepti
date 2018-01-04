@@ -53,6 +53,22 @@ re_avtorja = re.compile(
     flags=re.DOTALL
     )
 
+def leto(niz):
+    niz = niz.strip().split('.')
+    return int(niz[2])
+
+def minut_priprave(niz):
+    niz = niz.strip().split(' ')
+    if niz[0].isdigit():
+        stevilo = int(niz[0])
+        if stevilo // 10 >= 1:
+            minute = stevilo
+        else:
+            minute = 60 * stevilo
+    else:
+        minute = 60 * int(niz[0][0])
+    return minute
+
 def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
@@ -90,6 +106,11 @@ def podatki(blok):
             jed['avtor'] = None
         else:
             jed['avtor'] = avtor_match.groupdict()['avtor']
+
+        jed['leto'] = leto(jed['datum'])
+
+        jed['cas priprave [min]'] = minut_priprave(jed['cas']) if jed['cas'] else None
+        del jed['cas']
             
         return jed
     else:
@@ -135,10 +156,6 @@ def preberi_iz_imenika(imenik):
                 jedi.append(podatki(blok.group(0)))
     return jedi
 
-#shrani_jedi_v_imenik('test', 2, 2)
-#shrani_jedi_v_imenik('jedi')
-jedi = preberi_iz_imenika('jedi')
-#print(jedi)
 
 def zapisi_json(podatki, ime_datoteke):
     with open(ime_datoteke, 'w') as datoteka:
@@ -150,3 +167,15 @@ def zapisi_csv(podatki, polja, ime_datoteke):
         pisalec.writeheader()
         for podatek in podatki:
             pisalec.writerow(podatek)
+
+#shrani_jedi_v_imenik('test', 2, 2)
+#shrani_jedi_v_imenik('jedi')
+jedi = preberi_iz_imenika('jedi')
+
+zapisi_json(jedi, 'jedi.json')
+polja = [
+    'jed', 'vrsta', 'cas priprave [min]', 'zahtevnost', 'kolicina',
+    'avtor', 'datum', 'leto'
+    ]
+
+zapisi_csv(jedi, polja, 'jedi.csv')
