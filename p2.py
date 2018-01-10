@@ -59,6 +59,7 @@ def leto(niz):
     return int(niz[2])
 
 def minut_priprave(niz):
+    # casovne podatke pretvorimo v minute, zaokrozimo navzdol
     niz = niz.strip().split(' ')
     if niz[0].isdigit():
         stevilo = int(niz[0])
@@ -70,17 +71,20 @@ def minut_priprave(niz):
         minute = 60 * int(niz[0][0])
     return minute
 
-#kolicina enakomerno
 def st_oseb(niz):
+    # kolicinske podatke enotno zapisemo, odstopajoce izlocimo
     niz = niz.strip().split(' ')
     if len(niz) == 1:
+        # samo stevilke prepisemo
         if niz[0].isdigit():
             return int(niz[0])
+        # povprecje podatka a-b zaokrozimo navzgor
         elif '-' in niz[0]:
             niz = niz[0].split('-')
             niz1, niz2 = niz[0], niz[-1]
             if niz1.isdigit() and niz2.isdigit():
                 return math.ceil((int(niz1) + int(niz2)) / 2)
+    # podatki, ki se koncajo z besedo - enak postopek
     pravi = ['oseba', 'osebo', 'osebi', 'osebe', 'oseb', 'OSEBE', 'OSEB',
              'jedce', 'ljudi', 'ljudje', 'lačna', 'lačne',
              'porcij', 'porcije', 'kos', 'kosov', 'KOSOV']
@@ -94,6 +98,7 @@ def st_oseb(niz):
             niz1, niz2 = niz[0], niz[-1]
             if niz1.isdigit() and niz2.isdigit():
                 return math.ceil((int(niz1) + int(niz2)) / 2)
+        # stevilo z besedo pretvorimo v stevilko
         elif niz[-2] in opisno:
             return opisno.index(niz[-2]) + 1
     else:
