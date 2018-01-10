@@ -1,3 +1,4 @@
+import math
 import csv
 import json
 import re
@@ -69,6 +70,35 @@ def minut_priprave(niz):
         minute = 60 * int(niz[0][0])
     return minute
 
+#kolicina enakomerno
+def st_oseb(niz):
+    niz = niz.strip().split(' ')
+    if len(niz) == 1:
+        if niz[0].isdigit():
+            return int(niz[0])
+        elif '-' in niz[0]:
+            niz = niz[0].split('-')
+            niz1, niz2 = niz[0], niz[-1]
+            if niz1.isdigit() and niz2.isdigit():
+                return math.ceil((int(niz1) + int(niz2)) / 2)
+    pravi = ['oseba', 'osebo', 'osebi', 'osebe', 'oseb', 'OSEBE', 'OSEB',
+             'jedce', 'ljudi', 'ljudje', 'lačna', 'lačne',
+             'porcij', 'porcije', 'kos', 'kosov', 'KOSOV']
+    opisno = ['eno', 'dve', 'tri', 'štiri', 'pet',
+              'šest', 'sedem', 'osem', 'devet', 'deset']
+    if niz[-1] in pravi:
+        if niz[-2].isdigit():
+            return int(niz[-2])
+        elif '-' in niz[-2]:
+            niz = niz[-2].split('-')
+            niz1, niz2 = niz[0], niz[-1]
+            if niz1.isdigit() and niz2.isdigit():
+                return math.ceil((int(niz1) + int(niz2)) / 2)
+        elif niz[-2] in opisno:
+            return opisno.index(niz[-2]) + 1
+    else:
+        return None
+
 def podatki(blok):
     ujemanje = vzorec.search(blok)
     if ujemanje:
@@ -111,6 +141,8 @@ def podatki(blok):
 
         jed['cas priprave [min]'] = minut_priprave(jed['cas']) if jed['cas'] else None
         del jed['cas']
+
+        jed['st. porcij'] = st_oseb(jed['kolicina']) if jed['kolicina'] else None
             
         return jed
     else:
@@ -175,7 +207,7 @@ jedi = preberi_iz_imenika('jedi')
 zapisi_json(jedi, 'jedi.json')
 polja = [
     'jed', 'vrsta', 'cas priprave [min]', 'zahtevnost', 'kolicina',
-    'avtor', 'datum', 'leto'
+    'st. porcij', 'avtor', 'datum', 'leto',
     ]
 
 zapisi_csv(jedi, polja, 'jedi.csv')
