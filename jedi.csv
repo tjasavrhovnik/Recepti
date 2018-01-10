@@ -1,4 +1,4 @@
-jed,vrsta,cas priprave [min],zahtevnost,kolicina,st oseb,avtor,datum,leto
+jed,vrsta,cas priprave [min],zahtevnost,kolicina,st. porcij,avtor,datum,leto
 Divjačinski zrezki v omaki,divjačina,180,4,4-5 oseb,5,anagorse,14.12.2017,2017
 Gratinirana pasta s puranom in gorgonzolo,perutnina,45,1,1,1,AlexStarsky,8.11.2017,2017
 Puranja rulada (šunka in sir),perutnina,45,1,,,AlexStarsky,4.11.2017,2017
@@ -17,7 +17,7 @@ Moja mega raca,perutnina,150,3,4 OSEBE,4,sportdelta,26.11.2014,2014
 File v ovoju s slanino ,perutnina,75,2,4,4,Trixi,21.11.2014,2014
 Pečene krače divjega prašiča ,divjačina,240,3,,,Mandi_doo,17.11.2014,2014
 Slana rulada - piramida,sesekljano meso,120,2,,,SMARTY1,17.11.2014,2014
-Leni burek,sesekljano meso,60,2,3-4-osebe,,SMARTY1,17.11.2014,2014
+Leni burek,sesekljano meso,60,2,3-4-osebe,4,SMARTY1,17.11.2014,2014
 Sogan dolma,sesekljano meso,60,2,4 osebe,4,SMARTY1,11.11.2014,2014
 Moj Esich Fleisch,govedina,15,1,,,pilatus,28.10.2014,2014
 Mesne kroglice v bešamelu - đulbastije,sesekljano meso,60,2,4-6 oseb,5,SMARTY1,16.10.2014,2014
@@ -48,7 +48,7 @@ Svinjski zrezki v sirovi omaki,svinjina,,2,2 osebi,2,barbara R.,5.2.2006,2006
 Puranji golaž z zelenjavo,perutnina,45,3,za 3 do 4 osebe,4,tjas,4.2.2006,2006
 Vampi,govedina,,2,,,petra79,3.2.2006,2006
 Jetrca s slanino,notranji deli,,1,,,anja,1.2.2006,2006
-Zeljna zloženka s sirom,sesekljano meso,120,2,2-3,,piščanec,31.1.2006,2006
+Zeljna zloženka s sirom,sesekljano meso,120,2,2-3,3,piščanec,31.1.2006,2006
 Piščančja prsa v kisli ingverjevi omaki s fižolom,perutnina,,2,za 4 osebe,4,sarabande,28.1.2006,2006
 Piščančji zrezki s papriko,perutnina,15,1,2,2,piščanec,27.1.2006,2006
 Telečja krača,govedina,,1,4,4,vukovicpeter,26.1.2006,2006
@@ -83,7 +83,7 @@ Mesni polpeti,mešano meso,,1,za 8 polpetov,,klavdija mustar,16.11.2005,2005
 Pišče v omaki,perutnina,,2,za 4 osebe,4,KristinaG,12.11.2005,2005
 Mesni burek,govedina,,2,,,ema,9.11.2005,2005
 Lepinja s pleskavico,sesekljano meso,,1,,,pia4,4.11.2005,2005
-Chilli con carne,sesekljano meso,,2,4-6,,julia,30.10.2005,2005
+Chilli con carne,sesekljano meso,,2,4-6,5,julia,30.10.2005,2005
 Goveji ptički,govedina,75,2,4 osebe,4,anamarija1,26.10.2005,2005
 Puranji zrezki na krožniku,perutnina,,1,,,kocka,24.10.2005,2005
 Mežerli,koline,,2,4 osebe,4,potepinka,18.10.2005,2005
@@ -150,7 +150,7 @@ Domači piščančji namaz,perutnina,60,1,1 l piščančjega namaza,,April is co
 Blitvini zvitki ali blitvine »sarmice« ,mešano meso,45,2,pekač,,April is cooking,30.9.2014,2014
 Žličniki v okusni puranovi omaki ,perutnina,45,2,Za 4 osebe,4,April is cooking,22.9.2014,2014
 Jelenov osso buco ,divjačina,120,3,,,mira5,22.9.2014,2014
-Puranja pogača,perutnina,90,3,4-6,,Saly,17.9.2014,2014
+Puranja pogača,perutnina,90,3,4-6,5,Saly,17.9.2014,2014
 Govedina kuhana v rdečem vinu,govedina,180,2,4 osebe,4,Vitta,17.9.2014,2014
 Mariniran in nadevan pečen piščanec ,perutnina,90,2,Za 4 osebe,4,April is cooking,17.9.2014,2014
 Tortilje s piščančjim mesom in papriko,perutnina,30,2,6 tortilj,,tweety7,16.9.2014,2014
@@ -176,7 +176,7 @@ Mesni zalogajčki,svinjina,,3,4 osebe,4,biba,4.3.2005,2005
 Golaž iz pečice,govedina,,3,,,ddarinka,3.3.2005,2005
 Piščančja jetrca mediteran,notranji deli,,1,4,4,pinki,24.2.2005,2005
 Poprovo meso,govedina,,3,,,Riko,22.2.2005,2005
-Šarenac - burek,sesekljano meso,,2,4-5,,pusnikb,21.2.2005,2005
+Šarenac - burek,sesekljano meso,,2,4-5,5,pusnikb,21.2.2005,2005
 Leskovska tresenka,svinjina,,2,Za 4 osebe,4,emulej,19.2.2005,2005
 Gaberski zmaj,perutnina,,2,za 2 osebi (prsa in pol),,zefokuh,16.2.2005,2005
 Piščančji zrezki v šampinjonovi omaki,perutnina,,1,za 4 osebe,4,kokos,13.2.2005,2005
@@ -184,7 +184,7 @@ Svinjski kare s kislim zeljem,svinjina,,2,4,4,galja,12.2.2005,2005
 Marinirane puranje tačke,perutnina,,2,za 2 osebi,2,tjas,10.2.2005,2005
 Hrustljav piščanec z jabolki,perutnina,,2,4 osebe,4,Trixi,4.2.2005,2005
 Goveji golaž,govedina,,1,6,6,pinki,1.2.2005,2005
-Piščančji paprikaš moje mame,perutnina,,2,4-6,,,29.1.2005,2005
+Piščančji paprikaš moje mame,perutnina,,2,4-6,5,,29.1.2005,2005
 Pikantna bedrca,perutnina,,1,,,galja,27.1.2005,2005
 Piščanec z limono in zelišči,perutnina,,2,4,4,julia,21.1.2005,2005
 Piščančja prsa po kraško,perutnina,,3,2 kos,2,,17.1.2005,2005
@@ -388,7 +388,7 @@ Divjačinski golaž,divjačina,,3,20 oseb,20,koreno,30.12.2002,2002
 Dušena ovčetina s kolerabo,drobnica,,3,4 osebe,4,male,30.12.2002,2002
 Mariniran goveji jezik,govedina,,1,,,janca,12.12.2002,2002
 Bosanska mesna štruca,mešano meso,,1,,,jasmina,2.12.2002,2002
-Polnjena raca,perutnina,,3,4-5,,vesna ša.,10.11.2002,2002
+Polnjena raca,perutnina,,3,4-5,5,vesna ša.,10.11.2002,2002
 Polpetke s paradižnikom,sesekljano meso,,1,,,Riko,6.11.2002,2002
 Puranje bedro z gobami in žajbljem,perutnina,,1,za 6 oseb,6,Riko,4.11.2002,2002
 S sojo nadevana raca,perutnina,,3,4 - 6 oseb,6,Marinka,3.11.2002,2002
@@ -433,7 +433,7 @@ Svinjska pečenka po koroško,svinjina,,1,,,Riko,5.3.2002,2002
 Dušen stročji fižol z mesom,mešano meso,,1,,,,18.2.2002,2002
 Nadevana mesna rolada v omaki,svinjina,,3,,,matjaž,11.2.2002,2002
 Lazanja z mesno omako,mešano meso,,3,,,Riko,29.1.2002,2002
-Tatarski biftek,sesekljano meso,,3,2-3,,wildstyle,21.1.2002,2002
+Tatarski biftek,sesekljano meso,,3,2-3,3,wildstyle,21.1.2002,2002
 Goveji file Stroganov,ostalo,,3,4 osebe,4,Marinka,11.1.2002,2002
 Stroganoff pljučna pečenka,govedina,,1,za 4 osebe,4,Henri,31.12.2001,2001
 Goveji file Stroganov,govedina,,3,4 osebe,4,Marinka,30.12.2001,2001
@@ -571,7 +571,7 @@ Hladna goveja pečenka,govedina,,1,,,Marinka,20.12.1997,1997
 Popečeni koščki mesa,ostalo,,1,,,Marinka,20.12.1997,1997
 Dunajski zrezki,teletina,30,3,4 osebe,4,marcell,3.4.2014,2014
 Zelenjavno mesni narastek,perutnina,90,3,za 4 osebe,4,katz,30.3.2014,2014
-Pleskavica ala Geisha,sesekljano meso,30,1,2-3,,Geisha,26.3.2014,2014
+Pleskavica ala Geisha,sesekljano meso,30,1,2-3,3,Geisha,26.3.2014,2014
 Ohrovtovi zvitki v lahki bešamelni omaki,sesekljano meso,60,2,12 zvitkov,,anamarija1,24.3.2014,2014
 Gyros,mešano meso,90,3,4,4,badass,24.3.2014,2014
 Mesna lazanja,ostalo,150,4,4 osebe,4,marcell,21.3.2014,2014
@@ -622,7 +622,7 @@ Mleto meso za testenine,svinjina,30,2,4 ljudje,4,master shef,2.7.2013,2013
 Pečeno svinjsko pleče..,svinjina,240,3,"za res,res veliko družbo",,Vrtejbenka,27.6.2013,2013
 Nedeljski zrezki,teletina,45,2,4 osebe ,4,Teja Tejći,19.6.2013,2013
 Zajec s šparglji,ostalo,60,3,Za 4 osebe,4,KarelVeliki,17.6.2013,2013
-Ajdova kaša z mletim mesom,sesekljano meso,45,2,2-3,,chefjure,13.6.2013,2013
+Ajdova kaša z mletim mesom,sesekljano meso,45,2,2-3,3,chefjure,13.6.2013,2013
 Moj piščančji file,perutnina,75,3,Za 4 osebe,4,Sandra_a,12.6.2013,2013
 Pizza bolognese,mešano meso,60,2,za 4 osebe,4,elarey,10.6.2013,2013
 Ravioli,mešano meso,45,2,4 osebe,4,master shef,10.6.2013,2013
@@ -678,7 +678,7 @@ Ohrovtovi zvitki z mesom,govedina,60,3,za 4 osebe,4,bubaduda1,14.2.2013,2013
 Puranji medaljoni s stročjim fižolom,perutnina,30,2,2 osebi,2,Cinnamon Stick,14.2.2013,2013
 Shepherd's pie z brokolijem,govedina,60,2,4 osebe,4,SLONCICA,11.2.2013,2013
 Goveja pečenka z gobami,govedina,45,2,za 4 osebe,4,Tomi D,7.2.2013,2013
-Teletina s sojino omako,teletina,30,2,2-3,,KatjekSun,5.2.2013,2013
+Teletina s sojino omako,teletina,30,2,2-3,3,KatjekSun,5.2.2013,2013
 Puranji zrezki v smetanovi omaki,perutnina,75,3,2 osebi,2,sančy,5.2.2013,2013
 Kislo zelje s krvavico,koline,45,1,2 osebi,2,anamarijapetje,4.2.2013,2013
 Piščančji file s kaprami v limonini omaki,perutnina,30,1,Za 2 osebi,2,sarabande,1.2.2013,2013
@@ -766,7 +766,7 @@ Kotleti z limono v plečki (mrenici),svinjina,120,2,3 osebe,3,taanjaa,19.1.2017,
 "Michoacan - golažu podobno, z mehiškim navdihom ",govedina,120,2,5-6 oseb,6,mamamia,5.1.2017,2017
 Enostavni piščanec v smetanovi omaki z njoki,perutnina,30,1,,,tasty,29.12.2016,2016
 Mesna rolada,mešano meso,60,2,4,4,pushte,26.12.2016,2016
-Jesenska zloženka,perutnina,45,2,3-4,,Chef_Edo,8.12.2016,2016
+Jesenska zloženka,perutnina,45,2,3-4,4,Chef_Edo,8.12.2016,2016
 Pica s klobaso,ostalo,45,2,,,Fala Slonček,4.12.2016,2016
 Svinjski kotleti ,svinjina,60,3,Za 5 oseb,5,IgorKoren,8.11.2016,2016
 Krvavičin zavitek,koline,60,2,2 osebi,2,Pesjaner1,29.10.2016,2016
@@ -817,7 +817,7 @@ Polnjena svinjska rebra,svinjina,180,2,za 3 lačne osebe,,zes5ana,9.2.2012,2012
 Pizza z mletim mesom,ostalo,60,3,2,2,pikapolonica80,7.2.2012,2012
 Piščanec in kislo zelje,perutnina,60,2,za 4 osebe,4,katja krašovec,7.2.2012,2012
 Čimitanje,mešano meso,45,2,za 6 oseb 12 kosov,12,tajika7,6.2.2012,2012
-Hokaido buča s krvavicami,koline,60,1,2-3,,Sweetie,4.2.2012,2012
+Hokaido buča s krvavicami,koline,60,1,2-3,3,Sweetie,4.2.2012,2012
 Piščančje prsi s panceto,perutnina,75,2,3 osebe,3,bannanna,4.2.2012,2012
 Lepa rižota,svinjina,30,1,,,katrin11,2.2.2012,2012
 Goveji zrezki malo drugače,govedina,60,1,za 4 osebe,4,Neža30,31.1.2012,2012
@@ -887,7 +887,7 @@ Musaka iz 4 svinjskih zrezkov,svinjina,45,3,,,ognjic,5.12.2011,2011
 Čufti  v zelenjavni omaki,sesekljano meso,45,3,Za 4 osebe,4,pery3,5.12.2011,2011
 Polpete,mešano meso,60,3,,,6goth6,4.12.2011,2011
 Musaka,sesekljano meso,90,2,,,timsavs,4.12.2011,2011
-Smetanov piščanec z gobami,perutnina,45,2,3-4,,morski vuk,2.12.2011,2011
+Smetanov piščanec z gobami,perutnina,45,2,3-4,4,morski vuk,2.12.2011,2011
 Kunčja terina,ostalo,240,3,Za 10 do 20 oseb,20,sarabande,1.12.2011,2011
 Goveji zrezki s kumaricami v ekonom loncu,govedina,60,3,za 4 osebe,4,aryy,1.12.2011,2011
 Pretaknjena svinjska pečenka s kislim zeljem in krompirjem,svinjina,90,2,za 4 osebe,4,Vojko J,30.11.2011,2011
@@ -900,7 +900,7 @@ Puran z gobicami v srajčki iz listnatega testa,perutnina,60,3,za 2 osebi,2,Moro
 Indijski piščančji curry ,perutnina,120,2,za štiri osebe,,mamamia,8.6.2016,2016
 "Čufti na ""moj način""",mešano meso,60,3,za 2 osebi,2,Moro,7.6.2016,2016
 Blaga piščančja rižota z bučkami in korenčkom,perutnina,30,2,za 2 osebi,2,Moro,6.6.2016,2016
-Lazanja z bučkami ,sesekljano meso,90,2,6-8,,shari2007,5.5.2016,2016
+Lazanja z bučkami ,sesekljano meso,90,2,6-8,7,shari2007,5.5.2016,2016
 Zarezani piščanec s porom,perutnina,60,2,,,janika13,17.4.2016,2016
 Pičančje prsi v limonini omaki z zelenimi šparglji,perutnina,60,2,Za 6 oseb,6,sarabande,9.4.2016,2016
 Telečja jetrca ,teletina,30,3,za 2 osebi,2,mmasa,29.3.2016,2016
@@ -927,7 +927,7 @@ Polnjen zajec,ostalo,180,3,Za 4 osebe,4,zes5ana,3.11.2011,2011
 Piška s šampinjoni,perutnina,30,1,2 osebe,2,kikerada,3.11.2011,2011
 Božanski segedin,svinjina,120,2,4 osebe,4,kikerada,28.10.2011,2011
 Piščančja peperonata,perutnina,30,2,2 osebi,2,bannanna,27.10.2011,2011
-Rižota z mletim mesom ,sesekljano meso,45,3,3-4,,Mirfas,26.10.2011,2011
+Rižota z mletim mesom ,sesekljano meso,45,3,3-4,4,Mirfas,26.10.2011,2011
 Solata s piščancem,perutnina,30,2,4 osebe,4,dzoana,24.10.2011,2011
 Piščanec z zeleno,perutnina,30,2,4 osebe,4,dzoana,24.10.2011,2011
 Mesni retaš,govedina,90,2,4,4,mala Metka,14.10.2011,2011
@@ -1160,7 +1160,7 @@ Puranji zrezki s sirom in vinom,perutnina,30,1,,,petra krpic,7.2.2010,2010
 "Piščančji ""ringlšpil""",perutnina,30,2,,,dj kumina,9.10.2015,2015
 Goveji zrezki v mandljevi omaki,govedina,30,3,8 oseb,8,dj kumina,26.9.2015,2015
 Telečja rolada,teletina,240,1,Za 12 do 15 oseb.,,sarabande,5.9.2015,2015
-Nedeljski pladenj »ala fasulas«,perutnina,120,2,2-3,,fasulas,21.8.2015,2015
+Nedeljski pladenj »ala fasulas«,perutnina,120,2,2-3,3,fasulas,21.8.2015,2015
 "Goveji rep s česnom, trto in zapečeno polento",govedina,240,3,4 osebe,4,Atara,12.8.2015,2015
 Lažni burek,govedina,60,1,,,SMARTY1,9.8.2015,2015
 Pečena piščančja bedra v sladko - kisli omaki s cimetom in medom,perutnina,45,2,,,mojamalakuhinja,5.8.2015,2015
@@ -1477,7 +1477,7 @@ Pečeni njoki z zrezki,perutnina,45,2,za 4 osebe,4,a1,5.11.2007,2007
 Puranje roladice ,perutnina,30,1,2 osebi,2,anamarija1,29.10.2007,2007
 Sočna pečenka,svinjina,90,3,za 4 lačne,,pegasti,27.10.2007,2007
 Piščančji paprikaš,perutnina,60,2,za 6 oseb,6,sarabande,26.10.2007,2007
-Svinjski file s suhimi slivami,svinjina,60,2,3-4,,boonkoo,25.10.2007,2007
+Svinjski file s suhimi slivami,svinjina,60,2,3-4,4,boonkoo,25.10.2007,2007
 Sarma na način mame Vide,mešano meso,180,4,4 - 6 oseb,6,trezika,23.10.2007,2007
 Svinjska rebra s kislim zeljem,svinjina,90,2,,,Jassy,21.10.2007,2007
 Hrenovke v čebulni omaki,ostalo,45,2,,,nesty,20.10.2007,2007
@@ -1657,7 +1657,7 @@ Krompirjevi svaljki v mesni omaki,svinjina,,2,,,m.schafe,20.6.2006,2006
 Svinjska pečenka po moje,svinjina,,3,,,BogoT,19.6.2006,2006
 Mesne kroglice v paradižnikovi omaki - čufte,mešano meso,,2,12 krogljic,,dascha,16.6.2006,2006
 Balzamični piščanec s pršutom,perutnina,,2,za 3 osebe,3,Vendelina jr.,14.6.2006,2006
-Ohrovtov narastek z mesom,ostalo,,3,3-4,,miia,7.6.2006,2006
+Ohrovtov narastek z mesom,ostalo,,3,3-4,4,miia,7.6.2006,2006
 Pečen pretaknjen svinjski hrbet,svinjina,,3,za 4 osebe,4,sarabande,29.5.2006,2006
 Golaž 3. srečanja KUL - Slo,ostalo,,3,100 ljudi:-),,matjaž,27.5.2006,2006
 Ragu iz bikovega repa,govedina,,2,6 do 8,,balu,26.5.2006,2006
