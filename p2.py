@@ -86,7 +86,7 @@ def st_oseb(niz):
                 return math.ceil((int(niz1) + int(niz2)) / 2)
     # podatki, ki se koncajo z besedo - enak postopek
     pravi = ['oseba', 'osebo', 'osebi', 'osebe', 'oseb', 'OSEBE', 'OSEB',
-             'jedce', 'ljudi', 'ljudje', 'lačna', 'lačne',
+             'jedce', 'ljudi', 'ljudje',
              'porcij', 'porcije', 'kos', 'kosov', 'KOSOV']
     opisno = ['eno', 'dve', 'tri', 'štiri', 'pet',
               'šest', 'sedem', 'osem', 'devet', 'deset']
@@ -148,6 +148,7 @@ def podatki(blok):
         del jed['cas']
 
         jed['st. porcij'] = st_oseb(jed['kolicina']) if jed['kolicina'] else None
+        del jed['kolicina']
             
         return jed
     else:
@@ -211,7 +212,7 @@ jedi = preberi_iz_imenika('jedi')
 
 zapisi_json(jedi, 'jedi.json')
 polja = [
-    'jed', 'vrsta', 'cas priprave [min]', 'zahtevnost', 'kolicina',
+    'jed', 'vrsta', 'cas priprave [min]', 'zahtevnost',
     'st. porcij', 'avtor', 'datum', 'leto',
     ]
 
