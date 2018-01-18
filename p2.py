@@ -98,7 +98,7 @@ def st_oseb(niz):
             niz1, niz2 = niz[0], niz[-1]
             if niz1.isdigit() and niz2.isdigit():
                 return math.ceil((int(niz1) + int(niz2)) / 2)
-        # stevilo z besedo pretvorimo v stevilko
+        # stevilo zapisano z besedo pretvorimo v stevilko
         elif niz[-2] in opisno:
             return opisno.index(niz[-2]) + 1
     else:
